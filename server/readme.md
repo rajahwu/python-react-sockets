@@ -76,7 +76,7 @@ db.init_app(app)
 Migrate(app, db)
 ```
 
-*config.py*
+*app.config.py*
 
 ```py
 import os
@@ -85,4 +85,12 @@ class Config():
     SECRET_KEY = os.environ.get("SECRET_KEY")
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+```
+
+*models.db.py*
+
+```py
+from sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 ```
